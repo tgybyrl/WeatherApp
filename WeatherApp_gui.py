@@ -6,12 +6,12 @@ import tkintermapview
 # Screen
 window = Tk()
 window.title("Best Weather App")
-window.minsize(width=400, height=350)
+window.minsize(width=200, height=200)
 window.config(padx=20, pady=20)
 
 
 # UI
-location_label = Label(text="Enter Location")
+location_label = Label(text="Enter Location",font=("Arial",18,"italic"))
 location_label.grid(row=0, column=0, columnspan=3, pady=10) #to create extra invisible column use columnspan method.
 
 location_entry = Entry(width=30)
@@ -71,7 +71,7 @@ def button_clicked():
                 except Exception as e:
                     result_label.config(text=f"{weather_info["icon"]} failed to load due to error: {e}")
 
-                result_label.config(text=f"Weather in {city.capitalize()}:")
+                result_label.config(text=f"Weather in {city.capitalize()}:",font=("Arial",12,"bold"))
                 temp_label.config(text=f"Temperature: {round(weather_info['temp'] - 273.15, 2)} °C")
                 desc_label.config(text=f"Description: {weather_info['description'].capitalize()}")
                 wind_label.config(text=f"Wind: {weather_info['wind']} m/s")
