@@ -60,7 +60,7 @@ def button_clicked():
                 lat, lon = weather_info["lat"], weather_info["lon"]
                 map_widget.set_position(lat, lon)
                 map_widget.set_zoom(15)
-                map_widget.grid(row=9, column=0, columnspan=3, pady=10)
+                map_widget.grid(row=9, column=0, columnspan=3, pady=8)
 
                 #Creating Icon
                 icon_path = f"WeatherApp Icons/{weather_info["icon"]}.png"
@@ -72,11 +72,11 @@ def button_clicked():
                     result_label.config(text=f"{weather_info["icon"]} failed to load due to error: {e}")
 
                 result_label.config(text=f"Weather in {city.capitalize()}:",font=("Arial",12,"bold"))
-                temp_label.config(text=f"Temperature: {round(weather_info['temp'] - 273.15, 2)} °C",font=("Arial",10,"normal"))
-                desc_label.config(text=f"Description: {weather_info['description'].capitalize()}",font=("Arial",10,"normal"))
-                wind_label.config(text=f"Wind: {weather_info['wind']} m/s",font=("Arial",10,"normal"))
-                pres_label.config(text=f"Pressure: {weather_info['pressure']} hPa",font=("Arial",10,"normal"))
-                humidity_label.config(text=f"Humidity: {weather_info['humidity']}%",font=("Arial",10,"normal"))
+                temp_label.config(text=f"Temperature: {round(weather_info['temp'] - 273.15, 2)} °C",font=("Arial",13,"normal"))
+                desc_label.config(text=f"Description: {weather_info['description'].capitalize()}",font=("Arial",11,"italic"))
+                wind_label.config(text=f"Wind: {weather_info['wind']} m/s",font=("Arial",11,"italic"))
+                pres_label.config(text=f"Pressure: {weather_info['pressure']} hPa",font=("Arial",11,"italic"))
+                humidity_label.config(text=f"Humidity: {weather_info['humidity']}%",font=("Arial",11,"italic"))
             else:
                 result_label.config(text="City not Found or API error.")
                 if map_widget:
