@@ -72,11 +72,11 @@ def button_clicked():
                     result_label.config(text=f"{weather_info["icon"]} failed to load due to error: {e}")
 
                 result_label.config(text=f"Weather in {city.capitalize()}:",font=("Arial",12,"bold"))
-                temp_label.config(text=f"Temperature: {round(weather_info['temp'] - 273.15, 2)} °C")
-                desc_label.config(text=f"Description: {weather_info['description'].capitalize()}")
-                wind_label.config(text=f"Wind: {weather_info['wind']} m/s")
-                pres_label.config(text=f"Pressure: {weather_info['pressure']} hPa")
-                humidity_label.config(text=f"Humidity: {weather_info['humidity']}%")
+                temp_label.config(text=f"Temperature: {round(weather_info['temp'] - 273.15, 2)} °C",font=("Arial",10,"normal"))
+                desc_label.config(text=f"Description: {weather_info['description'].capitalize()}",font=("Arial",10,"normal"))
+                wind_label.config(text=f"Wind: {weather_info['wind']} m/s",font=("Arial",10,"normal"))
+                pres_label.config(text=f"Pressure: {weather_info['pressure']} hPa",font=("Arial",10,"normal"))
+                humidity_label.config(text=f"Humidity: {weather_info['humidity']}%",font=("Arial",10,"normal"))
             else:
                 result_label.config(text="City not Found or API error.")
                 if map_widget:
